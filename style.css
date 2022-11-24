@@ -8,14 +8,13 @@ body {
   background: #b29881;
 }
 
-#loading {
-    background: url('./spinner.gif') no-repeat center center;
+#loader {
     position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
     width: 100%;
-    z-index: 9999999;
+    height: 100vh;
+    z-index: 1;
+    overflow: visible;
+    background: #fff url('loader.gif') no-repeat center center;
 }
 
 canvas#image-sequence {

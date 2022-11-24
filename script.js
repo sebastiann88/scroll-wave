@@ -47,20 +47,34 @@ const icon = document.getElementById("icon");
 icon.onclick = function() {
   if(mySong.paused) {
     mySong.play();
-    icon.src = "media/pause.png"
+    icon.src = "./media/pause.png"
   } else {
     mySong.pause();
-    icon.src = "media/play.png"
+    icon.src = "./media/play.png"
   }
 }
 
 // Giff
 
-function hideLoader() {
-    $('#loading').hide();
+let loader;
+
+function loadNow(opacity) {
+    if (opacity <= 0) {
+        displayContent();
+    } else {
+        loader.style.opacity = opacity;
+        window.setTimeout(function() {
+            loadNow(opacity - 0.05);
+        }, 50);
+    }
 }
 
-$(window).ready(hideLoader);
+function displayContent() {
+    loader.style.display = 'none';
+    document.getElementById('content').style.display = 'block';
+}
 
-// Strongly recommended: Hide loader after 20 seconds, even if the page hasn't finished loading
-setTimeout(hideLoader, 20 * 1000);
+document.addEventListener("DOMContentLoaded", function() {
+    loader = document.getElementById('loader');
+    loadNow(1);
+});
