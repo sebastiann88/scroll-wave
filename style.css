@@ -1,0 +1,91 @@
+html {
+  height: 100vh;
+}
+
+body {
+  position: relative;
+  height: 800vh;
+  background: #b29881;
+}
+
+canvas#image-sequence {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+.play-button-container {
+  position: fixed;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 1280px;
+  height: auto;
+  max-height: 720px;
+  z-index: 100;
+}
+
+.play-button {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  height: auto;
+  max-height: 720px;
+}
+
+.play-button img {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  right: 2em;
+  bottom: -3em;
+}
+
+.play-button p {
+  font-size: 18px;
+  color: #f5f5f5;
+  font-weight: 400;
+}
+
+#icon {
+  width: 80px;
+  cursor: pointer;
+}
+
+.animation-fade-out,
+.portfolio-fade-in {
+  position: absolute;
+  display: block;
+  width: 2em;
+  height: 2em;
+  margin: 0 auto;
+  background-color: #b29881;
+  background-color: red;
+  opacity: 0;
+}
+
+.animation-fade-out {
+  bottom: 8em;
+}
+
+.portfolio-fade-in {
+  bottom: 8em;
+}
+
+#container,
+.portfolio {
+  opacity: 0;
+}
+
+#image-sequence {
+  pointer-events: none;
+}
+
+.revealed {
+  display: none;
+}
+
